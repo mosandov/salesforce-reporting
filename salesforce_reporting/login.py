@@ -139,7 +139,7 @@ class Connection:
         report: JSON
         """
         details = 'true' if details else 'false'
-        url = '{}/reports/{}?includeDetails={}'.format(self.base_url, report_id, details)
+        url = '{}/reports/{}?includeDetails={}&allData=true'.format(self.base_url, report_id, details)
 
         if filters:
             return self._get_report_filtered(url, filters)
